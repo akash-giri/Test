@@ -1,0 +1,150 @@
+testTypes: [Web]
+
+xlsDataConfig:
+  'testData': ''
+  'stageData': ''
+
+defectConfig:
+ defectTool: #rally
+ projectId: 26289627029
+ defectOwner: 
+ username: 
+ password: 
+ url3: https://etouch.atlassian.net/
+ issueUrl: https://etouch.atlassian.net/rest/api/2/issue
+ keys: ETAAPIHS
+
+tfsConfig:
+ collectionURL: http://tfs-na.ihs.com:8080/tfs/NA_Energy_Collection
+ userName: IHS\ULD49133
+ password: eTouch#1234
+ projectName: srcold2
+ mappingServerPath: $/Pangaea/Main/Apps/Navigate/SQA/Etouchtfstest/srcold2
+ mappingLocalPath: C:\TFS
+ jniNativeBaseDir: ms_tfs_redist/native
+ workspaceName: tfsWorkspace35
+ maxReconections: 3
+
+testngConfig:
+ listener: com.arizona.listener.SuiteListener
+ className: 
+ reporter: com.etouch.report.TestNGReporter
+
+webConfig:
+ hub: localhost
+ port: 4001
+ URL: http://tmeridianportal.ihsenergy.com/
+ userName: eTouch
+ password: eTouch
+ tool: Selenium
+ testEnv: local
+ testClass: [com.arizona.web.pages.test.TestLaunchArizonaSmokeTests]
+ currentTestBeds: [Firefox]
+
+ testBeds:
+ #FireFox TestBed
+ - testBedName: Firefox 
+   browser:
+    name: Firefox
+    version: 25
+    driverLocation: 
+   platform: 
+    name: Windows
+    version: 7
+ #IE10 TestBed
+ - testBedName: InternetExplorer
+   browser:
+    name: InternetExplorer
+    version: 9
+    driverLocation: ..\\test-automation-library\\resources\\IEDriverServer.exe
+   platform: 
+    name: Windows
+    version: 7
+ #Chrome TestBed
+ - testBedName: Chrome
+   browser:
+    name: Chrome
+    version: 35
+    driverLocation: ..\\test-automation-library\\resources\\chromedriver.exe
+   platform: 
+    name: Windows
+    version: 7
+ #Safari TestBed
+ - testBedName: Safari
+   browser:
+    name: Safari
+    version: 5.1.7
+   platform: 
+    name: Windows
+    version: 7
+  
+mobileConfig:
+ hub: 127.0.0.1
+ port: 4723
+ tool: Appium
+ testEnv: local
+ currentTestBeds: []
+ 
+ testBeds:
+  #ios TestBeds
+ - testBedName: iPhoneNative
+   device:
+    name: eTouch's iPhone
+    udid: b260151b7058491bd4dcd99396da691f045c1bbc
+   browser:
+    name: eTouch's iPhone
+    version: 7.1
+    driverLocation: /Users/eTouch
+   platform: 
+    name: iOS
+   app:
+    bundleId: com.apple.samplecode.MapSearch
+    appPath: /Users/eTouch/Library/Developer/Xcode/DerivedData/MapSearch-fbxnltrbywbliyddutolsypcrxtj/Build/Products/Debug-iphoneos/MapSearch.app
+    
+    
+ - testBedName: iPhoneNativeSim
+   device:
+    name: iPhone Retina(4-inch)
+    type: simulator
+   browser:
+    name: eTouch's iPhone
+    version: 7.1
+    driverLocation: /Users/eTouch
+   platform: 
+    name: iOS
+   app:
+    bundleId: com.apple.samplecode.MapSearch
+    appPath: /Users/eTouch/Library/Developer/Xcode/DerivedData/MapSearch-fbxnltrbywbliyddutolsypcrxtj/Build/Products/Debug-iphonesimulator/MapSearch.app
+
+
+  #Android TestBeds
+ - testBedName: Android
+   device:
+    name: GT-I9300
+    type: Real device
+   browser:
+    name: 
+    version: 
+    driverLocation: 
+   platform: 
+    name: Android
+    version: 4.4.2
+   app:
+    appPackage: com.ihs.riginfomobile	 
+    appActivity: riginfomobile.droid.views.LoginView
+    
+  #Android TestBeds
+ - testBedName: AndroidNative
+   device:
+    name: GT-I9300
+    type: Emulator
+   browser:
+    name: 
+    version: 
+    driverLocation: 
+   platform: 
+    name: Android
+    version: 4.4.2
+   app:
+    appPackage: com.android.calculator2	 
+    appActivity: com.android.calculator2.Calculator
